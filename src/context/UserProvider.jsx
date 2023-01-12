@@ -19,7 +19,7 @@ const UserProvider = (props) => {
             if(user){
                 const {email, photoURL, displayName, uid} = user;
                 setUser({email, photoURL, displayName, uid});
-                console.log(email, photoURL, displayName, uid);
+                console.log({email, photoURL, displayName, uid});
             }
             else {
                 setUser(null)
@@ -39,10 +39,14 @@ const UserProvider = (props) => {
 
     return (
         <UserContext.Provider 
-            value={{user, setUser, 
+            value={
+                {
+                    user, setUser, 
                     registrarUsuario, 
                     iniciarSesion,
-                    cerrarSesion}}>
+                    cerrarSesion
+                }
+            }>
             {props.children} {/* Permite la visualizacion de cualquier componente */}
         </UserContext.Provider>
     )

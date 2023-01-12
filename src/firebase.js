@@ -1,7 +1,7 @@
 // Configuracion basica de Firebase propuesta en la vinculacion del proyecto
 import { initializeApp } from "firebase/app";
 
-//Este archivo tambien puede funcionar como controlador de Firebase sin necesidad de usar más archivos
+//Se importa la libreria de autentocacion con Firebase
 import {getAuth, } from 'firebase/auth'
 
 // Your web app's Firebase configuration
