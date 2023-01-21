@@ -10,7 +10,7 @@ import { onAuthStateChanged } from "firebase/auth" //Mantiene en activo un usuar
 export const UserContext = createContext()
 
 const UserProvider = (props) => {
-    const [user, setUser] = useState(false)
+    const [user, setUser] = useState(false);
 
     //Verificar el estado del usuario
     //Se usa useEfect para mantener activa la sesion iniciada y mostrar algunos datos del usuario logeado
@@ -19,7 +19,7 @@ const UserProvider = (props) => {
             if(user){
                 const {email, photoURL, displayName, uid} = user;
                 setUser({email, photoURL, displayName, uid});
-                console.log({email, photoURL, displayName, uid});
+                //console.log({email, photoURL, displayName, uid});
             }
             else {
                 setUser(null)

@@ -11,6 +11,10 @@ export const formValidate = () => {
             value: /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9]+)*(\.[a-z]{2,15})/,
             message: 'Formato de Email incorrcto'
         },
+        patternURL: {
+            value: /https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
+            message: 'Formato de URL incorrecto'
+        },
         minLength: {
             value: 6, 
             message: "Minimo 6 caracteres"
@@ -22,8 +26,8 @@ export const formValidate = () => {
                 return true
             }
         },
-        validateCoinciden(getValues) {
-            return {equals: v => v === getValues('password') || 'Las contraseñas no coinciden'}
+        validateCoinciden(value) {
+            return {equals: v => v === value || 'Las contraseñas no coinciden'}
         },
     }
 };

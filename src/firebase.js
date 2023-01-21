@@ -2,7 +2,10 @@
 import { initializeApp } from "firebase/app";
 
 //Se importa la libreria de autentocacion con Firebase
-import {getAuth, } from 'firebase/auth'
+import { getAuth } from 'firebase/auth'
+
+//Libreria de Firestore
+import { getFirestore } from 'firebase/firestore/lite' 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -14,8 +17,9 @@ const firebaseConfig = {
     appId: "1:275213344140:web:16b5f9f2f7ef26024d8aa9"
 };
 
-// Initialize Firebase
+// Inicia la app con Firebase con los sevicios requeridos
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
+const db = getFirestore(app);
 
-export {auth}
+export { auth, db }
